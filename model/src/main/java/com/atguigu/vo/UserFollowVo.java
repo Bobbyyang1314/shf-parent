@@ -1,8 +1,11 @@
 package com.atguigu.vo;
 
 
+import org.json4s.DateFormat;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserFollowVo implements Serializable {
@@ -140,7 +143,7 @@ public class UserFollowVo implements Serializable {
 	public String getCreateTimeString() {
 		Date date = this.getCreateTime();
 		if(null == date) return "";
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat df = (DateFormat) new SimpleDateFormat("yyyy-MM-dd");
 		String dateString = df.format(date);
 		return dateString;
 	}
